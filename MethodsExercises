@@ -1,0 +1,132 @@
+public class MethodsExercises {
+    public static void main(String[] args) {
+   // System.out.println(isCatPlaying(false,35));
+        // System.out.println(displayHighScorePosition("Anna",1));
+    System.out.println(calculateHighScorePosition(1500));
+    System.out.println(convertToCentimeters(68));
+    System.out.println(convertToCentimeters(5,8));
+    }
+    public static boolean shouldWakeUp(boolean barking,int hourOfDay){
+        boolean toReturn=false;
+        if((hourOfDay>=0 && hourOfDay<8)||(hourOfDay==23)){
+            if(barking) {
+                toReturn = true;
+            }
+        }
+        return toReturn;
+    }
+    public static boolean isLeapYear(int year){
+        boolean toReturn=false;
+        if(year>=1 && year<=9999){
+            if((year%4==0 && year%100!=0) ||  (year%400==0 && year%100==0)) {
+                    toReturn = true;
+            }
+        }
+        return toReturn;
+    }
+    public static boolean areEqualByThreeDecimalPlaces(double num1,double num2){
+        boolean toReturn=false;
+        int cqlo1=(int)num1;
+        int cqlo2=(int) num2;
+        double o1=num1*1000-(cqlo1*1000);
+        double o2=num2*1000-(cqlo2*1000);
+        int ostatuk1=(int)(o1);
+        int ostatuk2=(int)(o2);
+        if(ostatuk1==ostatuk2 && cqlo1==cqlo2){
+            toReturn=true;
+        }
+        return toReturn;
+    }
+    public static boolean hasEqualSum(int x,int y,int z){
+        boolean toReturn=false;
+        if((x+y)==z){
+            toReturn=true;
+        }
+        return toReturn;
+    }
+    public static boolean hasTeen(int x,int y, int z){
+        boolean toReturn=false;
+        if((x>=13 && x<=19)||(y>=13 && y<=19) || (z>=13 && z<=19)){
+            toReturn=true;
+        }
+        return toReturn;
+    }
+    public static boolean isTeen(int year){
+        boolean toReturn=false;
+        if(year>=13 && year<=19){
+            toReturn=true;
+        }
+        return toReturn;
+    }
+    public static double area(double radius){
+        double toReturn=-1;
+        if(radius>=0){
+            toReturn=Math.PI*Math.pow(radius,2);
+        }
+        return toReturn;
+    }
+    public static double area(double x,double y){
+        double toReturn=-1;
+        if(x>=0 && y>=0){
+            toReturn=x*y;
+        }
+        return toReturn;
+    }
+    public static void printYearsAndDays(long minutes){
+        if(minutes<0){
+            System.out.println("Invalid Value");
+        }else {
+            int days = (int) minutes / 1440;
+            int years = days / 365;
+            int daysResult = days - (years * 365);
+            System.out.println(minutes + " min = " + years + " y and " + daysResult + " d");
+        }
+    }
+    public static void printEqual(int x,int y,int z){
+        if(x<0 || y<0 || z<0){
+            System.out.println("Invalid Value");
+        }else if (x==y && y==z){
+            System.out.println("All numbers are equal");
+        }else if(x!=y && x!=z && y!=z){
+            System.out.println("All numbers are different");
+        }else{
+            System.out.println("Neither all are equal or different");
+        }
+    }
+    public static boolean isCatPlaying(boolean summer,int temperature){
+        boolean toReturn=false;
+        if(summer){
+            if(temperature>=25 && temperature<=45){
+                toReturn=true;
+            }
+        }else{
+            if(temperature>=25 && temperature<=35){
+                toReturn=true;
+            }
+        }
+        return toReturn;
+    }
+    public static String displayHighScorePosition(String name,int position){
+        return String.format(name+" managed to get into position "+position+" on the high score list");
+    }
+    public static int calculateHighScorePosition(int playerScore){
+        int toReturn=4;
+        if(playerScore>=1000){
+            toReturn=1;
+        }else if(playerScore>=500 && playerScore<1000){
+            toReturn=2;
+        }else if(playerScore>=100 && playerScore<500){
+            toReturn=3;
+        }
+        return toReturn;
+    }
+    public static double convertToCentimeters(int inches){
+        double toReturn=inches*2.54;
+        return toReturn;
+    }
+    public static double convertToCentimeters(int feet,int inches){
+        int allInches=(feet*12)+inches;
+        return convertToCentimeters(allInches);
+    }
+
+}
