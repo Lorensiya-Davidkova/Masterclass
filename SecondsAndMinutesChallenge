@@ -1,0 +1,16 @@
+public class SecondsAndMinutesChallenge {
+    public static void main(String[] args){
+        // 14569 seconds=> 242 minutes/49 seconds=>4 h: 2 min :49 s
+        System.out.println(getDurationString(12129));
+    }
+    public static String getDurationString(int seconds){
+        int minutes=seconds/60;
+        int seconds1=seconds-(minutes*60);
+        return getDurationString(minutes,seconds1);
+    }
+    public static String getDurationString(int minutes,int seconds){
+        int hours=minutes/60;
+        int minutes1=minutes-hours*60;
+        return (hours+"h "+minutes1+"m "+seconds+"s");
+    }
+}
