@@ -1,0 +1,23 @@
+public class FirstAndLastDigitSum {
+    public static void main(String[] args){
+        System.out.println(sumFirstAndLastDigit(0));
+        //0 -> pogledni
+    }
+    public static int sumFirstAndLastDigit(int number){
+        int countDigits=0;
+        int num=number;
+        int sum=-1;
+        if(number>0) {
+            while (number > 0) {
+                countDigits++;
+                number = number / 10;
+            }
+            int firstDigit = num / (int) Math.pow(10, countDigits - 1);
+            int lastDigit = num % 10;
+            sum = firstDigit + lastDigit;
+        }else if(number==0){
+            sum=0;
+        }
+        return sum;
+    }
+}
