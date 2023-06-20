@@ -1,0 +1,56 @@
+public class FlourPackProblem {
+    public static void main(String[] args){
+        //bigCount = the count of big flour bags (5 kilos each)
+        //smallCount = the count of small flour bags (1 kilo each)
+        //goal = the goal amount of kilos of flour needed to assemble a package.
+        // bigCount+smallCount >= goal
+
+        // 9 goal | 2 big | 0 small
+        // big Packets * 5=> ot goal - (bigPackets * 5) = sum1  ===> sum1= 4
+        // ako sum1 <0 -> false
+        // ako sum1 >=0 -> small >= sum1 => true else false
+        System.out.println(canPack(1,0,5));
+    }
+    /*public static boolean canPack(int bigCount, int smallCount,int goal){
+        boolean toReturn=false;
+        if(bigCount>=0 && smallCount>=0 && goal>=0){
+            if(goal-(bigCount*5)<0){
+            }else{
+                int ostatuk=goal-(bigCount*5);
+                if(smallCount>=ostatuk){
+                    toReturn=true;
+                }
+            }
+        }
+        return toReturn;
+    }*/
+    public static boolean canPack(int bigCount, int smallCount,int goal){
+        boolean toReturn=false;
+        if(bigCount>=0 && smallCount>=0 && goal>=0){
+            int bigC=bigCount;
+           for(int i=1;i<=bigC;i++){
+               if(goal>=5){
+                   bigCount--;
+                   goal=goal-5;
+               }else{
+                   break;
+               }
+               //System.out.println("From Big===> bigP:"+bigCount+" smallP:"+smallCount+" goal:"+goal);
+           }
+           int smallC=smallCount;
+               for(int i=1;i<=smallC;i++){
+                   if(goal>=1){
+                       goal--;
+                       smallCount--;
+                   }
+                   //System.out.println("From Big===> bigP:"+bigCount+" smallP:"+smallCount+" goal:"+goal);
+               }
+           if(goal==0){
+               toReturn=true;
+           }
+           //System.out.println("Small "+smallCount+" Big:"+bigCount+" goal:"+goal);
+        }
+        return toReturn;
+    }
+
+}
