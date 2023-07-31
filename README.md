@@ -2,9 +2,9 @@
 Here are all exercises from Java Programming Masterclass updated on Java 17 | Udemy
 Prerequisites
 Before you begin, make sure you have the following installed on the target computer:
-* 		Java Development Kit (JDK): To compile and run Java applications.
-* 		An Integrated Development Environment (IDE) such as Eclipse or IntelliJ IDEA (optional but recommended).
-* 		MySQL Server (or any other database server of your choice): To set up the database for the application.
+- Java Development Kit (JDK): To compile and run Java applications.
+- An Integrated Development Environment (IDE) such as Eclipse or IntelliJ IDEA (optional but recommended).
+- MySQL Server (or any other database server of your choice): To set up the database for the application.
 Step 1: Clone the Repository
 * 		Clone the project repository containing the Spring Boot web application to the target computer.
 * 		You can do this using Git by running the following command in the terminal:  Code: git clone <repository_url>		  
